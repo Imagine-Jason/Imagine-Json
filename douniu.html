@@ -8,17 +8,9 @@
     let label=document.createElement('label');
     label.innerText='';
     label.style.fontSize='50px';
+    label.style.backgroundColor='#1890ff';
+    label.style.color='#fff';
     document.body.append(label)
-    var br = document.createElement("br");
-    document.body.append(br)
-    
-    let btnReset=document.createElement('button');
-    btnReset.innerText='再来';
-        btnReset.style.fontSize='50px';
-    btnReset.onclick=(e)=>{
-        label.innerText='';
-    }
-    document.body.append(btnReset)
     
     var br = document.createElement("br");
     document.body.append(br)
@@ -26,6 +18,8 @@
         let btn=document.createElement('button');
         btn.style.marginRight='10px';
         btn.style.fontSize='40px';
+        label.style.backgroundColor='#1890ff';
+        label.style.color='#fff';
         btn.innerText=labels[i];
         let value= parseInt(btn.innerText);
         btn.value=value?value:0;
@@ -37,6 +31,19 @@
         }
         document.body.append(btn)
     }
+        
+    var br = document.createElement("br");
+    document.body.append(br)
+    
+    let btnReset=document.createElement('button');
+    btnReset.innerText='再来';
+    btnReset.style.fontSize='50px';
+    btnReset.style.backgroundColor='#1890ff';
+    btnReset.style.color='#fff';
+    btnReset.onclick=(e)=>{
+        label.innerText='';
+    }
+    document.body.append(btnReset)
 function getNiu(a){
     niu=0;
     for(let i=0;i<3;i++){
