@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+    button {
+        margin-right: 8px;
+        margin-bottom: 12px;
+        color: #fff;
+        border-radius: 4px;
+        padding: 0 15px;
+        font-size: 50px;
+        background-color: #1890ff;
+        border-color: #1890ff;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+        box-shadow: 0 2px 0 rgba(0,0,0,.045);
+    }
+    </style>
     </head>
     <body>
     <script>
@@ -17,12 +31,13 @@
     for(let i=0;i<labels.length;i++){
         let btn=document.createElement('button');
         btn.style.marginRight='10px';
-        btn.style.fontSize='40px';
-        label.style.backgroundColor='#1890ff';
-        label.style.color='#fff';
+        btn.style.fontSize='50px';
+        btn.style.backgroundColor='#1890ff';
+        btn.style.color='#fff';
         btn.innerText=labels[i];
         let value= parseInt(btn.innerText);
         btn.value=value?value:0;
+        if(btn.innerText==='A')btn.value=1;
         btn.onclick=(e)=>{
             label.innerText+=btn.value;
             if(label.innerText.length>4){
@@ -36,7 +51,7 @@
     document.body.append(br)
     
     let btnReset=document.createElement('button');
-    btnReset.innerText='再来';
+    btnReset.innerText='清除';
     btnReset.style.fontSize='50px';
     btnReset.style.backgroundColor='#1890ff';
     btnReset.style.color='#fff';
