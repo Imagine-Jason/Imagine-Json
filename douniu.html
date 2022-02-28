@@ -1,2 +1,60 @@
-111111111
-Hello there!
+<script>
+    const labels='A234567890';
+    let label=document.createElement('label');
+    label.innerText='';
+    label.style.fontSize='50px';
+    document.body.append(label)
+    var br = document.createElement("br");
+    document.body.append(br)
+    
+    let btnReset=document.createElement('button');
+    btnReset.innerText='再来';
+    btnReset.onclick=(e)=>{
+        label.innerText='';
+    }
+    document.body.append(btnReset)
+    
+    var br = document.createElement("br");
+    document.body.append(br)
+    for(let i=0;i<labels.length;i++){
+        let btn=document.createElement('button');
+        btn.style.marginRight='10px';
+        label.style.fontSize='40px';
+        btn.innerText=labels[i];
+        let value= parseInt(btn.innerText);
+        btn.value=value?value:0;
+        btn.onclick=(e)=>{
+            label.innerText+=btn.value;
+            if(label.innerText.length>4){
+                getNiu(label.innerText);
+            }
+        }
+        document.body.append(btn)
+    }
+function getNiu(a){
+    niu=0;
+    for(let i=0;i<3;i++){
+        for(let j=i+1;j<5;j++){
+            for(let k=j+1;k<5;k++){
+                let sum= parseInt(a[i])+parseInt(a[j])+parseInt(a[k]);
+                console.log(sum)
+                if(sum%10===0){
+                    for(let n=0;n<5;n++){
+                        niu+=parseInt(a[n]);
+                    }
+                    niu=niu%10;
+                    if(niu===0)niu='牛'
+                    alert(`牛-${niu}|${a[i]}${a[j]}${a[k]}`)
+                    //alert(`牛${niu}`)
+                    return;
+                    niu=0;
+                }
+            }
+        }
+    }
+    console.log('no')
+    alert(`没牛`)
+}
+
+//getNiu('14501');
+<script>
