@@ -25,6 +25,12 @@
     label.style.backgroundColor='#1890ff';
     label.style.color='#fff';
     document.body.append(label)
+    let label2=document.createElement('label');
+    label2.innerText='';
+    label2.style.fontSize='100px';
+    label2.style.backgroundColor='#1890ff';
+    label2.style.color='#fff';
+    document.body.append(label2)
     
     var br = document.createElement("br");
     document.body.append(br)
@@ -68,7 +74,7 @@ function getNiu(a){
                     }
                     niu=niu%10;
                     if(niu===0)niu='牛'
-                    alert(`牛-${niu}|${a[i]}${a[j]}${a[k]}`)
+                    label2.innerText=`牛-${niu}|${a[i]}${a[j]}${a[k]}`
                     //alert(`牛${niu}`)
                     return;
                     niu=0;
