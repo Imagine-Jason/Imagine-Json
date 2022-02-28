@@ -8,7 +8,7 @@
         color: #fff;
         border-radius: 4px;
         padding: 0 15px;
-        font-size: 50px;
+        font-size: 80px;
         background-color: #1890ff;
         border-color: #1890ff;
         text-shadow: 0 -1px 0 rgba(0,0,0,.12);
@@ -21,7 +21,7 @@
     const labels='A234567890';
     let label=document.createElement('label');
     label.innerText='';
-    label.style.fontSize='50px';
+    label.style.fontSize='100px';
     label.style.backgroundColor='#1890ff';
     label.style.color='#fff';
     document.body.append(label)
@@ -31,9 +31,6 @@
     for(let i=0;i<labels.length;i++){
         let btn=document.createElement('button');
         btn.style.marginRight='10px';
-        btn.style.fontSize='50px';
-        btn.style.backgroundColor='#1890ff';
-        btn.style.color='#fff';
         btn.innerText=labels[i];
         let value= parseInt(btn.innerText);
         btn.value=value?value:0;
@@ -41,7 +38,9 @@
         btn.onclick=(e)=>{
             label.innerText+=btn.value;
             if(label.innerText.length>4){
-                getNiu(label.innerText);
+                setTimeout(function(){
+                    getNiu(label.innerText)
+                },0);
             }
         }
         document.body.append(btn)
@@ -52,9 +51,6 @@
     
     let btnReset=document.createElement('button');
     btnReset.innerText='清除';
-    btnReset.style.fontSize='50px';
-    btnReset.style.backgroundColor='#1890ff';
-    btnReset.style.color='#fff';
     btnReset.onclick=(e)=>{
         label.innerText='';
     }
