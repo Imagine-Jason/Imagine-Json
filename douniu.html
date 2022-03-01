@@ -8,7 +8,7 @@
         color: #fff;
         border-radius: 4px;
         padding: 0 15px;
-        font-size: 80px;
+        font-size: 180px;
         background-color: #1890ff;
         border-color: #1890ff;
         text-shadow: 0 -1px 0 rgba(0,0,0,.12);
@@ -21,13 +21,13 @@
     const labels='A234567890';
     let label=document.createElement('label');
     label.innerText='';
-    label.style.fontSize='100px';
+    label.style.fontSize='200px';
     label.style.backgroundColor='#1890ff';
     label.style.color='#fff';
     document.body.append(label)
     let label2=document.createElement('label');
     label2.innerText='';
-    label2.style.fontSize='100px';
+    label2.style.fontSize='200px';
     label2.style.backgroundColor='red';
     label2.style.color='#fff';
     document.body.append(label2)
@@ -59,6 +59,7 @@
     btnReset.innerText='清除';
     btnReset.onclick=(e)=>{
         label.innerText='';
+        label2.innerText='';
     }
     document.body.append(btnReset)
 function getNiu(a){
